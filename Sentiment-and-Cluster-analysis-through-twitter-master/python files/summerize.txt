@@ -1,0 +1,25 @@
+{
+  "sample tweet sentiment": [
+    "1",
+    "1",
+    "1",
+    "1",
+    "1"
+  ],
+  "average number of nodes in each cluster": [
+    18,
+    20,
+    20,
+    19
+  ],
+  "Number of communities discovered:": 4,
+  "Number of users collected:": 5985,
+  "sample tweets": [
+    "Morning. #WeTheNorth https://t.co/Hw4kdbufBY",
+    "Past \ud83d\udc4a\ud83c\udffe Present. Welcome back, @mrvincecarter15. #WeTheNorth https://t.co/DKMbue0Ekh",
+    "That's gonna be a popular cast at school tomorrow. \ud83d\udd8a #WeTheNorth https://t.co/U41PqsOD8L",
+    "Tonight's @BICRazors starting lineups. #WeTheNorth https://t.co/6nbS4UNLoT",
+    "Superman in the house tonight. #RTZ #WeTheNorth https://t.co/FRsE19Lkbx"
+  ],
+  "Number of messages collected:": 54082
+}

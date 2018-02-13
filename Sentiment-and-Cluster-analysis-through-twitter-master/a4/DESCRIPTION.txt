@@ -1,0 +1,144 @@
+This Assignment is based on the data collected from the Twitter based on the NBA teams and its hash tags:
+
+
+'DubNation'
+'WeTheNorth'
+'GrindCity'
+'DetroitBasketball'
+'thunderup'
+'LakeShow'
+'DefendTheLand'
+
+
+1.collect.py 
+
+ Here I am collecting tweets for each hashtag and storing the tweets in each pickle file with the name of the file
+here are the file created 
+DubNation.pkl
+WeTheNorth'.pkl
+GrindCity.pkl
+DetroitBasketball.pkl
+thunderup.pkl
+LakeShow.pkl
+DefendTheLand.pkl
+
+
+#1.1
+For collecting unique tweets I store my id of the tweet each time I run. and later when I re-run my code i will be able to 
+get the unqiue tweets 
+
+#1.2
+
+ Number of messages collected:": 54082
+ Number of users collected:": 5985
+
+
+
+2. cluster.py
+
+#Here I pass my previously collected values from collect to cluster. and I select only users who have twitted on two teams only and made a graph for them
+#I removed all user who follows or tweeted only for a single team.
+
+#Later the graph is sent to grivan newman to identify cluster.
+
+#all the teets and cluster information is stored in a file Cluster.pkl
+
+ 
+Output of cluster.py
+
+Mutual number of followers for the team #thunderup #WeTheNorth ----> 6
+Mutual number of followers for the team #thunderup #DefendTheLand ----> 9
+Mutual number of followers for the team #thunderup #DetroitBasketball ----> 12
+Mutual number of followers for the team #thunderup #GrindCity ----> 9
+Mutual number of followers for the team #thunderup #LakeShow ----> 5
+Mutual number of followers for the team #thunderup #DubNation ----> 7
+Mutual number of followers for the team #WeTheNorth #DefendTheLand ----> 6
+Mutual number of followers for the team #WeTheNorth #DetroitBasketball ----> 11
+Mutual number of followers for the team #WeTheNorth #GrindCity ----> 16
+Mutual number of followers for the team #WeTheNorth #LakeShow ----> 3
+Mutual number of followers for the team #WeTheNorth #DubNation ----> 14
+Mutual number of followers for the team #DefendTheLand #DetroitBasketball ----> 24
+Mutual number of followers for the team #DefendTheLand #GrindCity ----> 8
+Mutual number of followers for the team #DefendTheLand #LakeShow ----> 3
+Mutual number of followers for the team #DefendTheLand #DubNation ----> 7
+Mutual number of followers for the team #DetroitBasketball #GrindCity ----> 15
+Mutual number of followers for the team #DetroitBasketball #LakeShow ----> 11
+Mutual number of followers for the team #DetroitBasketball #DubNation ----> 15
+Mutual number of followers for the team #GrindCity #LakeShow ----> 4
+Mutual number of followers for the team #GrindCity #DubNation ----> 7
+Mutual number of followers for the team #LakeShow #DubNation ----> 7
+graph has 109 nodes and 240 edges
+cluster 1  Number of nodes/followers 18
+cluster 2  Number of nodes/followers 20
+cluster 3  Number of nodes/followers 20
+cluster 4  Number of nodes/followers 19
+Cluster Information stored in file Cluster.pkl 
+
+
+3. clasify.py
+
+It makes the the out of previous files and out of which a sample of tweets is labled and sent as train data for the logistic model which predicts the 
+output lable for the test data.
+here again for each team a file is created with sentiment lable stored in a csv file.
+
+#files
+DubNation.csv
+WeTheNorth'.csv
+GrindCity.csv
+DetroitBasketball.csv
+thunderup.csv
+LakeShow.csv
+DefendTheLand.csv
+
+output of the file:
+Average cross validation accuracy for Logistic Regression=84.4 percentage
+Logistic Regression Results for team #WeTheNorth
+	 Tweets aganist team				 87
+	 Number of Tweets supporting team 		1259
+Logistic Regression Results for team #GrindCity
+	 Tweets aganist team				 800
+	 Number of Tweets supporting team 		1637
+Logistic Regression Results for team #DubNation
+	 Tweets aganist team				 836
+	 Number of Tweets supporting team 		2907
+Logistic Regression Results for team #DefendTheLand
+	 Tweets aganist team				 1288
+	 Number of Tweets supporting team 		3684
+Logistic Regression Results for team #DetroitBasketball
+	 Tweets aganist team				 1304
+	 Number of Tweets supporting team 		3895
+Logistic Regression Results for team #thunderup
+	 Tweets aganist team				 3079
+	 Number of Tweets supporting team 		4358
+Logistic Regression Results for team #LakeShow
+	 Tweets aganist team				 3669
+	 Number of Tweets supporting team 		4617
+
+
+4. summerize.py
+
+
+Information from other stored file is gathered and printed
+
+
+
+Insight from the analysis:
+
+
+Dubnation is a team which has minimum negative tweets.
+and lakeshow has equal number of positive and negative tweets.
+
+
+PROBLEM: since my train data has tweets mostly from the Dubnation team, the prediction for other teams 
+was influenzed by the tweets of that team which made the count of negative tweets for other teams to go far high.
+
+ 
+
+
+
+
+
+
+
+
+ 
