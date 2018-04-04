@@ -1,1 +1,1 @@
-# MachineLearning-Titanic_Survival_predictio
+# MachineLearning-Titanic_Survival_prediction
